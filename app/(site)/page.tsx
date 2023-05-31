@@ -1,4 +1,4 @@
-// import getSongs from "@/actions/getSongs";
+import getSongs from "@/actions/getSongs";
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 
@@ -7,18 +7,7 @@ import ListItem from "@/components/ListItem";
 export const revalidate = 0;
 
 export default async function Home() {
-  // const songs = await getSongs();
-
-  const songs = [
-    {
-      id: "1",
-      user_id: "test",
-      author: "test",
-      title: "test",
-      song_path: "test",
-      image_path: "test",
-    },
-  ];
+  const songs = await getSongs();
 
   return (
     <div

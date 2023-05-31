@@ -2,30 +2,25 @@
 
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
-import { usePathname } from "next/navigation";
-import { useMemo } from "react";
-import Box from "./Box";
 import { twMerge } from "tailwind-merge";
+import { usePathname } from "next/navigation";
+
+import { Song } from "@/types";
+// import usePlayer from "@/hooks/usePlayer";
+
 import SidebarItem from "./SidebarItem";
+import Box from "./Box";
 import Library from "./Library";
+import { useMemo } from "react";
 
 interface SidebarProps {
   children: React.ReactNode;
+  songs: Song[];
 }
 
-const Sidebar = ({ children }: SidebarProps) => {
+const Sidebar = ({ children, songs }: SidebarProps) => {
   const pathname = usePathname();
-
-  const songs = [
-    {
-      id: "1",
-      user_id: "test",
-      author: "test",
-      title: "test",
-      song_path: "test",
-      image_path: "test",
-    },
-  ];
+  //   const player = usePlayer();
 
   const routes = useMemo(
     () => [
@@ -38,8 +33,8 @@ const Sidebar = ({ children }: SidebarProps) => {
       {
         icon: BiSearch,
         label: "Search",
-        active: pathname === "/search",
         href: "/search",
+        active: pathname === "/search",
       },
     ],
     [pathname]
@@ -49,7 +44,7 @@ const Sidebar = ({ children }: SidebarProps) => {
     <div
       className={twMerge(
         `
-        flex
+        flex 
         h-full
         `
         // player.activeId && "h-[calc(100%-80px)]"
@@ -82,4 +77,5 @@ const Sidebar = ({ children }: SidebarProps) => {
     </div>
   );
 };
+
 export default Sidebar;
