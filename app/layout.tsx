@@ -7,7 +7,7 @@ import ToasterProvider from "@/providers/ToasterProvider";
 import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import SupabaseProvider from "@/providers/SupabaseProvider";
-// import Player from "@/components/Player";
+import Player from "@/components/Player";
 
 import "./globals.css";
 
@@ -36,7 +36,7 @@ export default async function RootLayout({
           <UserProvider>
             {/* <ModalProvider products={products} /> */}
             <Sidebar songs={userSongs}>{children}</Sidebar>
-            {/* <Player /> */}
+            <Player />
           </UserProvider>
         </SupabaseProvider>
       </body>
