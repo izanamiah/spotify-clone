@@ -18,9 +18,6 @@ Features:
 - Playlists / Liked songs system
 - Advanced Player component
 - Stripe recurring payment integration
-- How to write POST, GET, and DELETE routes in route handlers (app/api)
-- How to fetch data in server React components by directly accessing the database (WITHOUT API! like Magic!)
-- Handling relations between Server and Child components in a real-time environment
 - Cancelling Stripe subscriptions
 
 ![image](https://github.com/izanamiah/netflix-clone/assets/10970657/32f60afd-3ed1-45d5-b616-b648247ae9dc)
